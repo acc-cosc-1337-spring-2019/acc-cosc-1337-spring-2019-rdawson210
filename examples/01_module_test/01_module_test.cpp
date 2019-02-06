@@ -3,6 +3,7 @@
 #include "output.h"
 #include "if.h"
 #include "if_else.h"
+#include "switch.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
@@ -39,3 +40,12 @@ TEST_CASE("Test Generation Function")
 //value 4 result should be 'Option 4'
 //value 5 result should be 'Invalid Option'
 
+TEST_CASE("Test Menu Option Function")
+{
+	REQUIRE(menu_option(1) == "Option 1");
+	REQUIRE(menu_option(2) == "Option 2");
+	REQUIRE(menu_option(3) == "Option 3");
+	REQUIRE(menu_option(4) == "Option 4");
+	REQUIRE(menu_option(5) == "Invalid Option");
+
+}

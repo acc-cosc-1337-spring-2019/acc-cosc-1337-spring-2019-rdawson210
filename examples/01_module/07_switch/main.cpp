@@ -1,5 +1,8 @@
+#include<iostream>
 
 int main() 
 {
-	return 0;
+	auto some_year = 100;
+
+	std::cout << some_year;
 }
