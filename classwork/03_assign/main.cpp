@@ -11,7 +11,7 @@ factorial.  Also, loop continues as long as user wants to.
 int main() 
 {
 	int num;
-	char choice;
+	int choice;
 	do 
 	{
 		cout << "Enter a number to receive that number's factorial:  ";
