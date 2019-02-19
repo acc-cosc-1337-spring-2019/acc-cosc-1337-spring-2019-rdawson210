@@ -34,6 +34,8 @@ TEST_CASE("Testing is_prime")
 	REQUIRE(is_prime(4) == false);
 	REQUIRE(is_prime(43) == true);
 	REQUIRE(is_prime(44) == false);
+	REQUIRE(is_prime(1) == false);
+	REQUIRE(is_prime(9) == false);
 }
 
 
@@ -46,6 +48,8 @@ argument 50 return vector should have the following items:
 */
 TEST_CASE("Testing vector_of_primes")
 {
-	REQUIRE(vector_of_primes(10) == { 2, 3, 5, 7 });
-	REQUIRE(vector_of_primes(50) == { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 });
+	vector<int> test1 = { 2, 3, 5, 7 };
+	REQUIRE(vector_of_primes(10) == test1);
+	vector<int> test2 = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47 };
+	REQUIRE(vector_of_primes(50) == test2);
 }
