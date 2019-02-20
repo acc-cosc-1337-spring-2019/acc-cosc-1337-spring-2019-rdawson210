@@ -14,7 +14,7 @@ Program continues until user decides to exit.
 */
 int main()
 {
-	char choice;
+	int choice;
 	vector<int> param_numbers;
 	int input;
 	vector<int> vector_primes;
@@ -24,12 +24,12 @@ int main()
 		cin >> choice;
 		if (choice == 1)
 		{
-			cout << "Enter a list of numbers. Type any non-number to exit." << "\n";
-			do // needs fixing
+			cout << "Enter a list of 5 numbers. Type any non-number to exit." << "\n";
+			for (int i=0; i<5; i++)
 			{
 				cin >> input;
 				param_numbers.push_back(input);
-			} while (cin >> input);
+			}
 			int big = get_max_from_vector(param_numbers);
 			cout << "Max Value:" << big << "\n";
 		}
@@ -41,9 +41,9 @@ int main()
 			cout << "Vector of Primes: ";
 			for (auto n : vector_primes)
 			{
-				cout << n << "," << "\t";
+				cout << n << ",  ";
 			}
+			cout << "\n";
 		}
 	} while (choice == 1 || choice == 2);
-	cout << "goodbye :-)";
 }
