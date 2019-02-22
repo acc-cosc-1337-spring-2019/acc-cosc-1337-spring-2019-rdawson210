@@ -2,9 +2,6 @@
 #include "catch.hpp"
 #include "rectangle.h"
 
-TEST_CASE("Verify Test Configuration", "verification") {
-	REQUIRE(true == true);
-}
 
 /*
 Create a test case to test the Rectangle class with following values:
@@ -14,7 +11,14 @@ Width	Height		Area
 100		10			1000
 
 */
-TEST_CASE("TESTING") 
-{
-	REQUIRE(return_val() == 1);
+TEST_CASE("Testing Rectangle Class") {
+	//Rectangle rectangle1(4, 5);
+	//REQUIRE(account.get_area() == 20);
+
+	//Rectangle rectangle1(10, 10);
+	//REQUIRE(account.get_area() == 100);
+
+	//Rectangle rectangle1(100, 10);
+	//REQUIRE(account.get_area() == 1000);
 }
+
