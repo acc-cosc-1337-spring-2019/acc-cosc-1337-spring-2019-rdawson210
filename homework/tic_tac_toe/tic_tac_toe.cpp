@@ -140,18 +140,18 @@ bool TicTacToe::check_board_full()
 		if (v == " ")
 		{
 			check = 0;
+			break;
 		}
 		else
 		{
 			check = 1;
-			break;
 		}
 	}
-	if (check == 1)
+	if (check == 0)
 	{
 		return false;
 	}
-	else if (check == 0)
+	else if (check == 1)
 	{
 		return true;
 	}
