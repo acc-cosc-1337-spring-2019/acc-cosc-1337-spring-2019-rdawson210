@@ -6,6 +6,7 @@ TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
+/*
 TEST_CASE("Test first player X") 
 {
 	TicTacToe tic_tac_toe;
@@ -13,4 +14,22 @@ TEST_CASE("Test first player X")
 
 	REQUIRE(tic_tac_toe.get_player() == "X");
 
+}
+*/
+
+TEST_CASE("Test win by first column")
+{
+	TicTacToe board;
+	board.start_game("X");
+	REQUIRE(board.game_over() == false);
+	board.mark_board(1);
+	REQUIRE(board.game_over() == false);
+	board.mark_board(2);
+	REQUIRE(board.game_over() == false);
+	board.mark_board(4);
+	REQUIRE(board.game_over() == false);
+	board.mark_board(5);
+	REQUIRE(board.game_over() == false);
+	board.mark_board(7);
+	REQUIRE(board.game_over() == true);
 }
