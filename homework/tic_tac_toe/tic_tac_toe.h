@@ -14,7 +14,7 @@ public:
 	string get_player() const;
 private:
 	string next_player;
-	vector<string>pegs{ 9, 0 };
+	vector<string>pegs{ 9, " " };
 
 	void set_next_player();
 	bool check_column_win();

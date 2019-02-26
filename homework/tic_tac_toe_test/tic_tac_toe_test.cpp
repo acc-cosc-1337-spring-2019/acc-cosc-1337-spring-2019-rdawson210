@@ -6,7 +6,7 @@ TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
-/*
+
 TEST_CASE("Test first player X") 
 {
 	TicTacToe tic_tac_toe;
@@ -15,7 +15,7 @@ TEST_CASE("Test first player X")
 	REQUIRE(tic_tac_toe.get_player() == "X");
 
 }
-*/
+
 
 TEST_CASE("Test win by first column")
 {
