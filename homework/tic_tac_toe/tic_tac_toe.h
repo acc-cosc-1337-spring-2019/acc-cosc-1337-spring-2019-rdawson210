@@ -12,6 +12,7 @@ public:
 	void mark_board(int mark);
 	void display_board() const;
 	string get_player() const;
+	
 private:
 	string next_player;
 	vector<string>pegs{ 9, " " };

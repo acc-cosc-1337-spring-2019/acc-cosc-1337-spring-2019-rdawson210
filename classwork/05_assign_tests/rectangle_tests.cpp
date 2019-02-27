@@ -12,13 +12,13 @@ Width	Height		Area
 
 */
 TEST_CASE("Testing Rectangle Class") {
-	//Rectangle rectangle1(4, 5);
-	//REQUIRE(account.get_area() == 20);
+	Rectangles rectangle1(4, 5);
+	REQUIRE(rectangle1.get_area() == 20);
 
-	//Rectangle rectangle1(10, 10);
-	//REQUIRE(account.get_area() == 100);
+	Rectangles rectangle2(10, 10);
+	REQUIRE(rectangle2.get_area() == 100);
 
-	//Rectangle rectangle1(100, 10);
-	//REQUIRE(account.get_area() == 1000);
+	Rectangles rectangle3(100, 10);
+	REQUIRE(rectangle3.get_area() == 1000);
 }
 

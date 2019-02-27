@@ -14,10 +14,10 @@ Iterate the vector and display the Area for each Rectangle on one line and the t
 */
 int main() 
 {
-	std::vector<Rectangle> list_of_data;
-	Rectangle rectangle1(4, 5);
-	Rectangle rectangle2(10, 10);
-	Rectangle rectangle3(100, 10);
+	std::vector<Rectangles> list_of_data;
+	Rectangles rectangle1(4, 5);
+	Rectangles rectangle2(10, 10);
+	Rectangles rectangle3(100, 10);
 
 	list_of_data.push_back(rectangle1);
 	list_of_data.push_back(rectangle2);

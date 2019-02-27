@@ -9,7 +9,6 @@ using std::cout;
 
 bool TicTacToe::game_over()
 {
-	bool check;
 	if (check_column_win() == true)
 	{
 		return true;
@@ -32,7 +31,7 @@ bool TicTacToe::game_over()
 	}
 }
 
-void TicTacToe::start_game(std::string first_player)
+void TicTacToe::start_game(string first_player)
 {
 	next_player = first_player;
 }
@@ -58,7 +57,7 @@ string TicTacToe::get_player() const
 
 void TicTacToe::set_next_player()
 {
-	if (next_player == "X")
+	if (next_player == "X" || next_player == "x")
 	{
 		next_player = "O";
 	}
@@ -70,15 +69,15 @@ void TicTacToe::set_next_player()
 
 bool TicTacToe::check_column_win()
 {
-	if (pegs[0] == pegs[3] && pegs[3] == pegs[6])
+	if (pegs[0] != " " && pegs[0] == pegs[3] && pegs[3] == pegs[6])
 	{
 		return true;
 	}
-	else if (pegs[1] == pegs[4] && pegs[4] == pegs[7])
+	else if (pegs[1] != " " && pegs[1] == pegs[4] && pegs[4] == pegs[7])
 	{
 		return true;
 	}
-	else if (pegs[2] == pegs[5] && pegs[5] == pegs[8])
+	else if (pegs[2] != " " && pegs[2] == pegs[5] && pegs[5] == pegs[8])
 	{
 		return true;
 	}
@@ -90,15 +89,15 @@ bool TicTacToe::check_column_win()
 
 bool TicTacToe::check_row_win()
 {
-	if (pegs[0] == pegs[1] && pegs[1] == pegs[2])
+	if (pegs[0] != " " && pegs[0] == pegs[1] && pegs[1] == pegs[2])
 	{
 		return true;
 	}
-	else if (pegs[3] == pegs[4] && pegs[4] == pegs[5])
+	else if (pegs[3] != " " && pegs[3] == pegs[4] && pegs[4] == pegs[5])
 	{
 		return true;
 	}
-	else if (pegs[6] == pegs[7] && pegs[7] == pegs[8])
+	else if (pegs[6] != " " && pegs[6] == pegs[7] && pegs[7] == pegs[8])
 	{
 		return true;
 	}
@@ -110,11 +109,11 @@ bool TicTacToe::check_row_win()
 
 bool TicTacToe::check_diagonal_win()
 {
-	if (pegs[0] == pegs[4] && pegs[4] == pegs[8])
+	if (pegs[0] != " " && pegs[0] == pegs[4] && pegs[4] == pegs[8])
 	{
 		return true;
 	}
-	else if (pegs[2] == pegs[4] && pegs[4] == pegs[6])
+	else if (pegs[2] != " " && pegs[2] == pegs[4] && pegs[4] == pegs[6])
 	{
 		return true;
 	}
