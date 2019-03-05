@@ -1,4 +1,5 @@
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_manager.h"
 #include <string>
 #include<vector>
 #include<iostream>
@@ -39,7 +40,10 @@ void TicTacToe::start_game(string first_player)
 void TicTacToe::mark_board(int mark)
 {
 	pegs[mark - 1] = next_player;
-	set_next_player();
+	if (game_over() == false)
+	{
+		set_next_player();
+	}
 }
 
 void TicTacToe::display_board() const
@@ -154,5 +158,13 @@ bool TicTacToe::check_board_full()
 	{
 		return true;
 	}
+}
+
+void TicTacToe::set_winner()
+{
+	if (check_board_full() == true)
+		winner = "C";
+	else
+		winner = next_player;
 }
 

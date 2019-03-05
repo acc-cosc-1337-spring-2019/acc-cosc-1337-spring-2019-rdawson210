@@ -1,5 +1,8 @@
+#ifndef TICTACTOE_H
+#define TICTACTOE_H
 #include<string>
 #include<vector>
+#include "tic_tac_toe_manager.h"
 
 using std::string;
 using std::vector;
@@ -16,6 +19,7 @@ public:
 private:
 	string next_player;
 	vector<string>pegs{ 9, " " };
+	string winner;
 
 	void set_next_player();
 	bool check_column_win();
@@ -23,4 +27,7 @@ private:
 	bool check_diagonal_win();
 	void clear_board();
 	bool check_board_full();
+	void set_winner();
+	string get_winner() { return winner; };
 };
+#endif //TICTACTOE_H
