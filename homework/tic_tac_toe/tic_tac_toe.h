@@ -2,7 +2,6 @@
 #define TICTACTOE_H
 #include<string>
 #include<vector>
-#include "tic_tac_toe_manager.h"
 
 using std::string;
 using std::vector;
@@ -15,7 +14,7 @@ public:
 	void mark_board(int mark);
 	void display_board() const;
 	string get_player() const;
-	string get_winner() { return winner; };
+	string get_winner() { return winner; }
 	
 private:
 	string next_player;

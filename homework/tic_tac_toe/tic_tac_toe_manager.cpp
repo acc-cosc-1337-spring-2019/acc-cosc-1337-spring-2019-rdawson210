@@ -1,5 +1,4 @@
 #include "tic_tac_toe_manager.h"
-#include "tic_tac_toe.h"
 #include<string>
 #include<vector>
 
@@ -26,3 +25,4 @@ void TicTacToeManager::update_winner_count(string winner)
 		++ties;
 	}
 }
+
