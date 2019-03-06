@@ -15,6 +15,7 @@ public:
 	void mark_board(int mark);
 	void display_board() const;
 	string get_player() const;
+	string get_winner() { return winner; };
 	
 private:
 	string next_player;
@@ -28,6 +29,5 @@ private:
 	void clear_board();
 	bool check_board_full();
 	void set_winner();
-	string get_winner() { return winner; };
 };
 #endif //TICTACTOE_H
