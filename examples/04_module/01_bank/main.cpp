@@ -1,4 +1,8 @@
 #include "atm.h"
+#include<iostream>
+
+using std::cout;
+using std::cin;
 
 int main() 
 {
@@ -14,8 +18,23 @@ int main()
 	{
 		cout << act.get_balance() << "\n";
 	}*/
-
+	BankAccount account(123456, 500);
 	ATM atm;
 	atm.display_balance();
 
+	display(account);
+
+	BankAccount b(1, 900);
+	BankAccount c = account + b;
+	cout << c;
+	//cin >> c;
+
+	cout << "\n";
+	display(c);
+
+	/*
+	for(auto tic_tac_toe: list)
+	{
+	cout<<tic_tac_toe<<"\n";
+	*/
 }

@@ -1,5 +1,6 @@
 #ifndef TIC_TAC_TOE_MANAGER_H
 #define TIC_TAC_TOE_MANAGER_H
+
 #include "tic_tac_toe.h"
 #include<vector>
 #include<string>
@@ -13,7 +14,7 @@ public:
 	//void save_game(const TicTacToe game) { games.push_back(game); };
 	void display_history() const;
 private:
-	vector<string>games{};
+	//vector<TicTacToe> games; WHYYYYYYY
 	int x_win = 0;
 	int o_win = 0;
 	int ties = 0;
