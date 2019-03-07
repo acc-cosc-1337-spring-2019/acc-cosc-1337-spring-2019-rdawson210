@@ -14,7 +14,7 @@ public:
 	void mark_board(int mark);
 	void display_board() const;
 	string get_player() const;
-	string get_winner() { return winner; }
+	string get_winner() const { return winner; }
 	
 private:
 	string next_player;

@@ -165,6 +165,7 @@ TEST_CASE("Test win diagonally from top right")
 	REQUIRE(board.game_over() == false);
 	board.mark_board(3);
 	REQUIRE(board.game_over() == true);
+	REQUIRE(board.get_winner() == "X");
 }
 
 TEST_CASE("Test for no winner")
@@ -190,4 +191,5 @@ TEST_CASE("Test for no winner")
 	REQUIRE(board.game_over() == false);
 	board.mark_board(8);
 	REQUIRE(board.game_over() == true);
+	REQUIRE(board.get_winner() == "C");
 }

@@ -12,10 +12,7 @@ using std::string;
 class TicTacToeManager
 {
 public:
-	void save_game(const TicTacToe game) 
-	{  //call update winner here
-		games.push_back(game); 
-	}
+	void save_game(const TicTacToe game);
 	void display_history() const;
 private:
 	vector<TicTacToe> games; //WHYYYYYYY
