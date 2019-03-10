@@ -50,14 +50,6 @@ void TicTacToe::mark_board(int mark)
 	}
 }
 
-void TicTacToe::display_board() const
-{
-	for (std::size_t i = 0; i < pegs.size(); i += 3)
-	{
-		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
-	}
-}
-
 string TicTacToe::get_player() const
 {
 	return next_player;
@@ -170,5 +162,23 @@ void TicTacToe::set_winner()
 		winner = "C";
 	else
 		winner = next_player;
+}
+
+istream & operator>>(istream & in, TicTacToe& game)
+{
+	cout << "Player " << game.get_player() << ", type the number of the spot you would like to mark" << "\n";
+	int mark;
+	in >> mark;
+	game.mark_board(mark);
+	return in;
+}
+
+ostream & operator<<(ostream & out, const TicTacToe game)
+{
+	for (std::size_t i = 0; i < game.pegs.size(); i += 3)
+	{
+		cout << game.pegs[i] << "|" << game.pegs[i + 1] << "|" << game.pegs[i + 2] << "\n";
+	}
+	return out;
 }
 

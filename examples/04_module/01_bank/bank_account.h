@@ -1,24 +1,27 @@
 #ifndef BANK_ACCOUNT_H
 #define BANK_ACCOUNT_H
+#include "transaction.h"
 #include<iostream>
-class BankAccount 
+#include<vector>
+
+class BankAccount
 {
 public:
-	BankAccount(); //Overloading constructor, esp if parameters match
-	BankAccount(int act, double bal); //Overloading constructor
+	BankAccount(int act, double bal);
 	double get_balance() const;
 	void deposit(double amount);
+	void deposit(int pin, double amount);
 	void withdraw(double amount);
 	friend void display(const BankAccount& act);
-	friend BankAccount operator + (BankAccount& act1, const BankAccount& act2);
-	friend std::ostream & operator<<(std::ostream & out, const BankAccount & b);
-	friend std::istream & operator>>(std::istream & in, const BankAccount & b);
-
+	friend BankAccount operator +(BankAccount& act1,
+		const BankAccount& act2);
+	friend std::ostream & operator << (std::ostream & out,
+		const BankAccount & b);
 private:
+	std::vector<Transaction> transactions;
 	int account_number;
 	double balance;
-	bool amount_greater_than_0(double amount);
-
+	bool amount_greater_zero(double amount);
 };
 
-#endif  // !BANK_ACCOUNT_H
+# endif // !BANK_ACCOUNT_H

@@ -10,7 +10,6 @@ using std::cin;
 int main()
 {
 	char choice = 1;
-	int mark;
 	string player;
 	TicTacToeManager history;
 	do
@@ -21,15 +20,13 @@ int main()
 		game.start_game(player);
 		do
 		{
-			cout << "Player " << game.get_player() << ", type the number of the spot you would like to mark" << "\n";
-			cin >> mark;
-			game.mark_board(mark);
-			game.display_board();
+			cin >> game;
+			cout << game;
 		} while (game.game_over() == false);
 		history.save_game(game);
 		cout << "Your game has ended. To play another game, press 1. To exit, press 2." << "\n";
 		cin >> choice;
 	} while (choice == '1');
-	history.display_history();
+	cout << history;
 
 }

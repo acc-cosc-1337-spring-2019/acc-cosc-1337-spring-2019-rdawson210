@@ -2,7 +2,10 @@
 #define TICTACTOE_H
 #include<string>
 #include<vector>
+#include<iostream>
 
+using std::istream;
+using std::ostream;
 using std::string;
 using std::vector;
 
@@ -12,9 +15,10 @@ public:
 	bool game_over();
 	void start_game(string first_player);
 	void mark_board(int mark);
-	void display_board() const;
 	string get_player() const;
 	string get_winner() const { return winner; }
+	friend istream & operator >> (istream & in, TicTacToe& game);
+	friend ostream & operator << (ostream & out, const TicTacToe game);
 	
 private:
 	string next_player;

@@ -13,19 +13,6 @@ void TicTacToeManager::save_game(const TicTacToe game)
 	games.push_back(game);
 }
 
-void TicTacToeManager::display_history() const
-{
-	cout << "Your game history:" << "\n";
-	for (auto c : games)
-	{
-		c.display_board();
-		cout << "\n";
-	}
-	cout << "Player X Total Wins: " << x_win << "\n";
-	cout << "Player O Total Wins: " << o_win << "\n";
-	cout << "Total Ties: " << ties << "\n";
-}
-
 void TicTacToeManager::update_winner_count(string winner)
 {
 	if (winner == "X")
@@ -42,3 +29,17 @@ void TicTacToeManager::update_winner_count(string winner)
 	}
 }
 
+ostream & operator << (ostream & out, const TicTacToeManager history)
+{
+	cout << "Your game history:" << "\n";
+	for (auto c : history.games)
+	{
+		cout << c;
+		cout << "\n";
+	}
+	cout << "Player X Total Wins: " << history.x_win << "\n";
+	cout << "Player O Total Wins: " << history.o_win << "\n";
+	cout << "Total Ties: " << history.ties << "\n";
+
+	return out;
+}
