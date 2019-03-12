@@ -5,11 +5,11 @@ BankAccount::BankAccount(int act, double bal) :
 	account_number(act), balance(bal)
 {
 }
-double BankAccount::get_balance() const
+double BankAccount::get_balance()
 {
 
-	//Transaction t("inquiry", 0, balance);
-	//transactions.push_back();
+	Transaction t("Inquiry", 0, balance);
+	transactions.push_back(t);
 	return balance;
 }
 
@@ -18,6 +18,8 @@ void BankAccount::deposit(double amount)
 	if (amount > amount_greater_zero(amount))
 	{
 		balance += amount;
+		Transaction t("Deposit", amount, balance);
+		transactions.push_back(t);
 	}
 }
 
@@ -31,6 +33,8 @@ void BankAccount::withdraw(double amount)
 	if (amount > 0 && balance >= amount)
 	{
 		balance -= amount;
+		Transaction t("Withdraw", amount, balance);
+		transactions.push_back(t);
 	}
 }
 
