@@ -1,8 +1,40 @@
 #include "atm.h"
+#include "savings_account.h"
+#include "checking_account.h"
 #include<iostream>
+#include<vector>
+
+using std::cout;
+using std::vector;
+using std::reference_wrapper;
+using std::endl;
+
 
 int main()
 {
+	SavingsAccount s(12345, 1000);
+	cout << s.get_balance() << "\n";
+
+	BankAccount& act = s;
+	cout << act.get_balance() << "\n";
+
+	CheckingAccount c(54321, 500);
+	cout << c.get_balance() << "\n";
+	BankAccount& d = c;
+	cout << d.get_balance() << "\n";
+
+	vector<reference_wrapper<BankAccount>> accounts{ s, c };
+
+	for (auto & account : accounts)
+	{
+		cout << account.get().get_balance() << endl;
+	}
+	
+	
+	int num = 5;
+	int& num_ref = num;
+	cout << num_ref;
+	
 	BankAccount account(123456, 500);
 	Customer customer(account);
 	ATM atm(customer);
@@ -12,12 +44,12 @@ int main()
 	atm.display_balance();
 
 
-	BankAccount b(1, 900);
-	BankAccount c = account + b;
-	//std::cout << c;
-	//std::cin << c;
-	std::cout << "\n";
-	std::cout << c << "\n";
+	//BankAccount b(1, 900);
+	//BankAccount c = account + b;
+	//cout << c;
+	//cin << c;
+	cout << "\n";
+	cout << c << "\n";
 
 	/*std::vector<BankAccount>accounts;
 	BankAccount account(12345689, 500);  //object1
@@ -26,7 +58,7 @@ int main()
 	accounts.push_back(account1);
 	for (auto act : accounts)
 	{
-		std::cout << act.get_balance() << "\n";
+		cout << act.get_balance() << "\n";
 	}*/
 
 	/*

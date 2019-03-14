@@ -6,8 +6,10 @@ class SavingsAccount: public BankAccount
 {
 public:
 	SavingsAccount(int act, double bal, float i = .9) :
-		BankAccount(act, bal), interest_rate(i) {} // initializing BankAccount object - not local variables
+		BankAccount(act, bal), interest_rate(i) {} // act & bal initializing BankAccount object - not local
+												//variables
 	void add_interest_earned();
+	double get_balance();
 private:
 	const float interest_rate;
 	const float time = 1.0 / 12.0;
