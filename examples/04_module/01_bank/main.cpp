@@ -23,12 +23,12 @@ int main()
 	BankAccount& d = c;
 	cout << d.get_balance() << "\n";
 
-	//vector<reference_wrapper<BankAccount>> accounts{ s, c };
+	/*vector<reference_wrapper<BankAccount>> accounts{ s, c };
 
 	for (auto & account : accounts)
 	{
 		cout << account.get().get_balance() << endl;
-	}
+	}*/
 	
 	
 	int num = 5;
