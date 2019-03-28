@@ -1,8 +1,8 @@
 #include "shape.h"
 #include <iostream>
-//cpp
 
+using std::cout;
 void Shape::draw()
 {
-	std::cout << "Draw Shape...\n";
+	cout << "Draw Shape...\n";
 }
