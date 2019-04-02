@@ -140,4 +140,3 @@ ostream & operator<<(ostream & out, const TicTacToe game)
 	}
 	return out;
 }
-

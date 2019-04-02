@@ -2,7 +2,7 @@
 #include "catch.hpp"
 #include "tic_tac_toe.h"
 
-/*TEST_CASE("Verify Test Configuration", "verification") {
+TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 
@@ -202,4 +202,4 @@ TEST_CASE("Test for no winner")
 	REQUIRE(board->game_over() == true);
 	REQUIRE(board->get_winner() == "C");
 	delete board;
-}*/
+}
