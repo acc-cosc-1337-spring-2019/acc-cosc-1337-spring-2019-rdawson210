@@ -1,7 +1,6 @@
 #ifndef TICTACTOE_H
 #define TICTACTOE_H
-#include"tic_tac_toe_3.h"
-#include"tic_tac_toe_4.h"
+
 #include<string>
 #include<vector>
 #include<iostream>
@@ -11,9 +10,10 @@ using std::ostream;
 using std::string;
 using std::vector;
 
-class TicTacToe 
+class TicTacToe
 {
 public:
+	TicTacToe() : pegs(9, " ") {}
 	TicTacToe(int s) : pegs(s*s, " ") {}
 	bool game_over();
 	void start_game(string first_player);

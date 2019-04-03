@@ -11,10 +11,10 @@ using std::cin;
 
 int main()
 {
-	char choice = 1;
+	/*char choice = 1;
 	string player;
 	TicTacToeManager history;
-	cout << "To play with a 3x3 board, press 3. To plat with a 4x4 board, press 4." << "\n";
+	cout << "To play with a 3x3 board, press 3. To play with a 4x4 board, press 4." << "\n";
 	int size;
 	cin >> size;
 	do
@@ -28,7 +28,7 @@ int main()
 		}
 		else if (size == 4)
 		{
-			game = new TicTacToe4;
+			game = new TicTacToe4();
 		}
 		game->start_game(player);
 		do
@@ -41,5 +41,5 @@ int main()
 		cout << "Your game has ended. To play another game, press 1. To exit, press 2." << "\n";
 		cin >> choice;
 	} while (choice == '1');
-	cout << history;
+	cout << history;*/
 }
