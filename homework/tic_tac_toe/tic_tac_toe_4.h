@@ -6,6 +6,7 @@ class TicTacToe4 : public TicTacToe
 {
 public:
 	TicTacToe4();
+	void display_board();
 
 private:
 	vector<string> pegs{};

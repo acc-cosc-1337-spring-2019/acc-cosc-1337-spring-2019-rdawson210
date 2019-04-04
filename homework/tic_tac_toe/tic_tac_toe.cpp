@@ -93,9 +93,9 @@ void TicTacToe::clear_board()
 bool TicTacToe::check_board_full()
 {
 	int check = 0;
-	for (auto v : pegs)
+	for (int v; v < pegs.size(); v++)
 	{
-		if (v == " ")
+		if (pegs[v] == " ")
 		{
 			check = 0;
 			break;
@@ -123,7 +123,7 @@ void TicTacToe::set_winner()
 		winner = next_player;
 }
 
-istream & operator>>(istream & in, TicTacToe& game)
+/*istream & operator>>(istream & in, TicTacToe& game)
 {
 	cout << "Player " << game.get_player() << ", type the number of the spot you would like to mark" << "\n";
 	int mark;
@@ -139,4 +139,4 @@ ostream & operator<<(ostream & out, const TicTacToe game)
 		cout << game.pegs[i] << "|" << game.pegs[i + 1] << "|" << game.pegs[i + 2] << "\n";
 	}
 	return out;
-}
+}*/

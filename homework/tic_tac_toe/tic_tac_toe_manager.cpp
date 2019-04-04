@@ -34,7 +34,7 @@ ostream & operator << (ostream & out, const TicTacToeManager history)
 	cout << "Your game history:" << "\n";
 	for (auto c : history.games)
 	{
-		cout << c;
+		c.display_board();
 		cout << "\n";
 	}
 	cout << "Player X Total Wins: " << history.x_win << "\n";

@@ -14,14 +14,15 @@ class TicTacToe
 {
 public:
 	TicTacToe() : pegs(9, " ") {}
-	TicTacToe(int s) : pegs(s*s, " ") {}
+	TicTacToe(int s) : pegs(s*s, "0") {}
 	bool game_over();
 	void start_game(string first_player);
 	void mark_board(int mark);
 	string get_player() const;
 	string get_winner() const { return winner; }
-	friend istream & operator >> (istream & in, TicTacToe& game);
-	friend ostream & operator << (ostream & out, const TicTacToe game);
+	//friend istream & operator >> (istream & in, TicTacToe& game);
+	//friend ostream & operator << (ostream & out, const TicTacToe game);
+	virtual void display_board() {}
 
 protected:
 	vector<string>pegs{};

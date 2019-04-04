@@ -11,7 +11,7 @@ using std::cin;
 
 int main()
 {
-	/*char choice = 1;
+	char choice = 1;
 	string player;
 	TicTacToeManager history;
 	cout << "To play with a 3x3 board, press 3. To play with a 4x4 board, press 4." << "\n";
@@ -33,13 +33,16 @@ int main()
 		game->start_game(player);
 		do
 		{
-			cin >> *game;
-			cout << *game;
+			cout << "Player " << game->get_player() << ", type the number of the spot you would like to mark" << "\n";
+			int mark;
+			cin >> mark;
+			game->mark_board(mark);
+			game->display_board();
 		} while (game->game_over() == false);
 		history.save_game(*game);
 		delete game;
 		cout << "Your game has ended. To play another game, press 1. To exit, press 2." << "\n";
 		cin >> choice;
 	} while (choice == '1');
-	cout << history;*/
+	cout << history;
 }

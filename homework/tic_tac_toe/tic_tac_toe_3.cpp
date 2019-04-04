@@ -1,7 +1,18 @@
 #include "tic_tac_toe_3.h"
+#include<iostream>
+
+using std::cout;
 
 TicTacToe3::TicTacToe3() : TicTacToe(3)
 {
+}
+
+void TicTacToe3::display_board()
+{
+	for (int i = 0; i < 9; i += 3)
+	{
+		cout << pegs[i] << "|" << pegs[i + 1] << "|" << pegs[i + 2] << "\n";
+	}
 }
 
 bool TicTacToe3::check_column_win()
