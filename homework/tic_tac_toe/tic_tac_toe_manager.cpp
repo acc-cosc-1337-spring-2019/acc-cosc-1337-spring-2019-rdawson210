@@ -1,45 +1,54 @@
 #include "tic_tac_toe_manager.h"
-#include<string>
-#include<vector>
-#include<iostream>
+#include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 
-using std::string;
-using std::vector;
-using std::cout;
 
-void TicTacToeManager::save_game(const TicTacToe game)
+//Write class function implementations here
+
+void TicTacToeManager::save_game(std::unique_ptr<TicTacToe>& game)
 {
-	update_winner_count(game.get_winner());
-	games.push_back(game);
+	update_winner_count(game->get_winner());
+	games.push_back(std::move(game));
 }
 
-void TicTacToeManager::update_winner_count(string winner)
+std::unique_ptr<TicTacToe> TicTacToeManager::get_game(GameType game_type)
 {
-	if (winner == "X")
+	if (game_type == GameType::three)
 	{
-		++x_win;
+		return std::make_unique<TicTacToe3>();
+	}
+	else
+	{
+		return std::make_unique<TicTacToe4>();
+	}
+}
+
+void TicTacToeManager::update_winner_count(std::string winner)
+{
+	if (winner == "C")
+	{
+		ties++;
+	}
+	else if (winner == "X")
+	{
+		x_win++;
 	}
 	else if (winner == "O")
 	{
-		++o_win;
-	}
-	else if (winner == "C")
-	{
-		++ties;
+		o_win++;
 	}
 }
 
-ostream & operator << (ostream & out, const TicTacToeManager history)
+std::ostream & operator<<(std::ostream & out, const TicTacToeManager & t)
 {
-	cout << "Your game history:" << "\n";
-	for (auto c : history.games)
+	for (auto& game : t.games)
 	{
-		c.display_board();
-		cout << "\n";
+		out << *game;
 	}
-	cout << "Player X Total Wins: " << history.x_win << "\n";
-	cout << "Player O Total Wins: " << history.o_win << "\n";
-	cout << "Total Ties: " << history.ties << "\n";
+
+	out << "X wins: " << t.x_win << "\n";
+	out << "O wins: " << t.o_win << "\n";
+	out << "Ties: " << t.ties << "\n";
 
 	return out;
 }
