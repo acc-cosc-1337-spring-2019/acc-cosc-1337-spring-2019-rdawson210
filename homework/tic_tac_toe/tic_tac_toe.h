@@ -25,6 +25,8 @@ public:
 	friend std::istream & operator >> (std::istream & out,
 		TicTacToe & t);
 
+	const std::vector<std::string>& get_pegs() { return pegs; };
+
 protected:
 	std::vector<std::string> pegs;
 	virtual bool check_column_win()=0;
