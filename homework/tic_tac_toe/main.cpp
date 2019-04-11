@@ -36,7 +36,7 @@ int main()
 
 		cout << "Winner: " << tic_tac_toe->get_winner();
 
-		manager->save_game(std::move(tic_tac_toe));
+		manager->save_game(tic_tac_toe);
 
 		cout << "play again";
 		cin >> choice;
