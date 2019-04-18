@@ -5,10 +5,16 @@
 
 //Write class function implementations here
 
+TicTacToeManager::TicTacToeManager()
+{
+	games = get_games();
+}
+
 void TicTacToeManager::save_game(std::unique_ptr<TicTacToe>& game)
 {
 	update_winner_count(game->get_winner());
 	games.push_back(std::move(game));
+	save_game(get_pegs()); //why undefined?
 }
 
 std::unique_ptr<TicTacToe> TicTacToeManager::get_game(GameType game_type)

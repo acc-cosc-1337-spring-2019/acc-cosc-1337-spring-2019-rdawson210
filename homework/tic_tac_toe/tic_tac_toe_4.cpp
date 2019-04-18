@@ -1,5 +1,10 @@
 #include "tic_tac_toe_4.h"
 
+TicTacToe4::TicTacToe4(std::vector<std::string> s) : TicTacToe(GameType::four)
+{
+	string winner = determine_winner();
+}
+
 /*
 Win by column if and return true if (each column index)
 0, 1,  2,  3

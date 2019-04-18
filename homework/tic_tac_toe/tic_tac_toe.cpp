@@ -84,6 +84,44 @@ void TicTacToe::set_winner()
 	}
 }
 
+string TicTacToe::determine_winner()
+{
+	int x = 0;
+	int o = 0;
+	if (check_board_full() == true)
+	{
+		return "C";
+	}
+	else
+	{
+		for (auto p : pegs)
+		{
+			if (p == "X")
+			{
+				x++;
+			}
+			else if (p == "O")
+			{
+				o++;
+			}
+			else if (p == " ")
+			{
+				continue;
+			}
+			if (x > o)
+			{
+				return "X";
+			}
+			else
+			{
+				return "O";
+			}
+		}
+	}
+	
+	return string();
+}
+
 std::ostream & operator<<(std::ostream & out, const TicTacToe & t)
 {
 	for (std::size_t i = 0; i < t.pegs.size(); i += sqrt(t.pegs.size()))
