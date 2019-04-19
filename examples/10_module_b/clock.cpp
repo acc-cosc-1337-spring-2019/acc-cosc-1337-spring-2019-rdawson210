@@ -2,30 +2,27 @@
 
 /*
 Write code to return hours given seconds since 1970
-
 */
 int Clock::get_hours() const
 {
-	return 0;
+	return ((seconds / 3600) % 24) - 5;
 }
 
 /*
 Write code to return minutes given seconds since 1970
-
 */
 
 int Clock::get_minutes() const
 {
-	return 0;
+	return seconds / 60 % 60;
 }
 
 /*
 Write code to return seconds given seconds since 1970
-
 */
 int Clock::get_seconds() const
 {
-	return 0;
+	return seconds % 60;
 }
 
 /*
