@@ -19,6 +19,7 @@ enum GameType
 class TicTacToe
 {
 public:
+	TicTacToe() = default;
 	TicTacToe(GameType game_type) : pegs(game_type * game_type, " ") {}
 	TicTacToe(vector<string> s) : pegs(s) {}
 	void start_game(string first_player);

@@ -7,14 +7,14 @@
 
 TicTacToeManager::TicTacToeManager()
 {
-	games = get_games();
+	data.get_games();
 }
 
 void TicTacToeManager::save_game(std::unique_ptr<TicTacToe>& game)
 {
 	update_winner_count(game->get_winner());
 	games.push_back(std::move(game));
-	save_game(get_pegs()); //why undefined?
+	data.save_game(game->get_pegs());
 }
 
 std::unique_ptr<TicTacToe> TicTacToeManager::get_game(GameType game_type)
@@ -49,6 +49,25 @@ void TicTacToeManager::update_winner_count(std::string winner)
 	else if (winner == "O")
 	{
 		o_win++;
+	}
+}
+
+void TicTacToeManager::set_scores()
+{
+	for (auto & g : games)
+	{
+		if (g->get_winner() == "X")
+		{
+			x_win++;
+		}
+		else if (g->get_winner() == "O")
+		{
+			o_win++;
+		}
+		else
+		{
+			ties++;
+		}
 	}
 }
 

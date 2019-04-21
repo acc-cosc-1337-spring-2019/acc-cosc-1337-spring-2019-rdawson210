@@ -19,6 +19,7 @@ public:
 private:
 	std::vector<std::unique_ptr<TicTacToe>> games;
 	void update_winner_count(std::string winner);
+	void set_scores();
 
 	int x_win{ 0 }, o_win{ 0 }, ties{ 0 };
 	TicTacToeData data;
