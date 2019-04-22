@@ -50,7 +50,7 @@ Create unique ptr of TicTacToe boards
 */
 vector<unique_ptr<TicTacToe>> TicTacToeData::get_games()
 {
-	vector<unique_ptr<TicTacToe>> *games;
+	vector<unique_ptr<TicTacToe>> games = {};
 
 	fstream file(file_name, std::ios::in);
 
@@ -65,16 +65,16 @@ vector<unique_ptr<TicTacToe>> TicTacToeData::get_games()
 			{
 				current_line.push_back(string(1, line[i]));
 			}
-			std::unique_ptr<TicTacToe> board();
 			if (current_line.size() == 9)
 			{
-				board = std::make_unique<TicTacToe3>(current_line);
+				std::unique_ptr<TicTacToe> board = std::make_unique<TicTacToe3>(current_line);
+				games.push_back(board);
 			}
 			else if (current_line.size() == 16)
 			{
-				board = std::make_unique<TicTacToe3>(current_line);
+				std::unique_ptr<TicTacToe> board = std::make_unique<TicTacToe3>(current_line);
+				games.push_back(board);
 			}
-			*games.push_back(board);
 		}
 	}
 
