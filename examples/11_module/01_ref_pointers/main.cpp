@@ -5,6 +5,13 @@ using std::cout;
 
 int main() 
 {
+	int* hold_return_value;
+	int num = 5;
+
+	hold_return_value = return_pointer(num);
+
+
+	/*
 	int number = 10;
 	int* numberPtr = &number;
 
@@ -16,6 +23,6 @@ int main()
 	cout << "Address of numberPtr: " << &numberPtr << "\t" <<"Value stored at address pointed to is: " 
 		<< numberPtr << "\n"; 
 	cout << "Pointer dereferenced: " << *numberPtr << "\n"; //asterisk dereferences the pointer
-	
+	*/
 	return 0;
 }
