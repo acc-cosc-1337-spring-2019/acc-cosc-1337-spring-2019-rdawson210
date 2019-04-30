@@ -61,7 +61,7 @@ vector<unique_ptr<TicTacToe>> TicTacToeData::get_games()
 		while (std::getline(file, line))
 		{
 			vector<string> current_line;
-			for (int i = 0; i < line.size(); i++)
+			/*for (int i = 0; i < line.size(); i++)
 			{
 				current_line.push_back(string(1, line[i]));
 			}
@@ -74,7 +74,7 @@ vector<unique_ptr<TicTacToe>> TicTacToeData::get_games()
 			{
 				std::unique_ptr<TicTacToe> board = std::make_unique<TicTacToe3>(current_line);
 				games.push_back(board);
-			}
+			}*/
 		}
 	}
 
