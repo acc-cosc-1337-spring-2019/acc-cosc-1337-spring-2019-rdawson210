@@ -67,12 +67,12 @@ vector<unique_ptr<TicTacToe>> TicTacToeData::get_games()
 			}
 			if (current_line.size() == 9)
 			{
-				std::unique_ptr<TicTacToe> board = std::make_unique<TicTacToe3>(current_line);
+				std::unique_ptr<TicTacToe3> board = std::make_unique<TicTacToe3>(current_line);
 				games.push_back(board);
 			}
 			else if (current_line.size() == 16)
 			{
-				std::unique_ptr<TicTacToe> board = std::make_unique<TicTacToe3>(current_line);
+				std::unique_ptr<TicTacToe4> board = std::make_unique<TicTacToe3>(current_line);
 				games.push_back(board);
 			}*/
 		}
