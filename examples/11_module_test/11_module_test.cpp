@@ -20,7 +20,8 @@ TEST_CASE("Test class copy")
 {
 	Destructor d(10);
 	REQUIRE(d.get_value() == 10);
-	Destructor a = d; //creates class copy
+	Destructor a(10);
+	a = d; //creates class copy
 	REQUIRE(a.get_value() == 10);
 	d.set_value(5);
 	REQUIRE(d.get_value() == 5);
