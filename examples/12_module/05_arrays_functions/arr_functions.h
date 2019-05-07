@@ -1,1 +1,1 @@
-//
+void iterate_array(int* ints, const int SIZE);
